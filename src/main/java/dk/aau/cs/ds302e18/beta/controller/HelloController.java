@@ -1,4 +1,4 @@
-package dk.aau.cs.ds302e18.beta.controllers;
+package dk.aau.cs.ds302e18.beta.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
