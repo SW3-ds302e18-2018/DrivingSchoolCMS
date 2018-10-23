@@ -25,5 +25,7 @@ hs_err_pid*
 # Property File
 authconfig.properties
 
-# IDEA
+# IntelliJ
 .idea/*
+target/*
+beta.iml
