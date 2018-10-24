@@ -13,7 +13,6 @@ import java.util.ResourceBundle;
 
 public class Notification
 {
-
     private static String ACCESS_KEY;
     private static String SECRET_KEY;
     private static String emailUsername;
@@ -39,8 +38,7 @@ public class Notification
     }
 
     // Send SMS to a Phone Number
-    private void SMSMessage(AmazonSNSClient snsClient,
-                            String message, String phoneNumber)
+    private void SMSMessage(AmazonSNSClient snsClient, String message, String phoneNumber)
     {
         PublishResult result = snsClient.publish(new PublishRequest()
                 .withMessage(message)
@@ -74,10 +72,10 @@ public class Notification
             mimeMessage.setSubject("Notification from Driving School");
             mimeMessage.setText("" + message);
             Transport.send(mimeMessage);
-        } catch (MessagingException mex)
+        }
+        catch (MessagingException mex)
         {
             mex.printStackTrace();
         }
     }
-
 }
