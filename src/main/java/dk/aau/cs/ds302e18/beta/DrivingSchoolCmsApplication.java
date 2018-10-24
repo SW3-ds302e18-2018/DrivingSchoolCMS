@@ -10,6 +10,6 @@ public class DrivingSchoolCmsApplication {
 	public static void main(String[] args) {
 
 		//SpringApplication.run(DrivingSchoolCmsApplication.class, args);
-		new Notification("Test","+45 12345678", "ds308e18@cs.aau.dk");
+		//new Notification("Test","+45 12345678", "ds308e18@cs.aau.dk");
 	}
 }
