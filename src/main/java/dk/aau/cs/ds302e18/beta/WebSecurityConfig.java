@@ -18,13 +18,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 {
-    @Autowired
-    private UserDetailsService userDetailsService;
 
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception
@@ -32,9 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         http
                 .authorizeRequests()
                     .antMatchers("/", "/home").permitAll()
-                    .antMatchers("/admin/**").access("hasRole('ADMIN')")
-                    .antMatchers("/instructor/**").access("hasRole('INSTRUCTOR')")
-                    .antMatchers("/student/**").access("hasRole('STUDENT')")
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
@@ -43,11 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                     .and()
                 .logout()
                     .permitAll();
-    }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
 
     @Bean
