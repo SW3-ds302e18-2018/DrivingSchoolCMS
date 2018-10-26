@@ -11,5 +11,6 @@ public class DrivingSchoolCmsApplication {
 
 		//SpringApplication.run(DrivingSchoolCmsApplication.class, args);
 		//new Notification("Test","+45 12345678", "ds308e18@cs.aau.dk");
+
 	}
 }
