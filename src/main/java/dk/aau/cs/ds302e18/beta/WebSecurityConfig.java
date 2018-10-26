@@ -1,4 +1,4 @@
-package dk.aau.cs.ds302e18.beta.config;
+package dk.aau.cs.ds302e18.beta;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.beans.factory.annotation.Autowired;
